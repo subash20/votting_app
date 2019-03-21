@@ -1,21 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
-metdata:
+metadata:
   name: postgres-deployment
   labels:
-    name: postgres-deployment
-    app: demo-voting-app
+          #name: postgres-deployment
+    app: voting-app-demo
 spec:
   replicas: 1
   selector:
-    name: prostgres-pod
-    app: voting-app-pod
+     matchLabels:
+        name: prostgres-pod
+        app: voting-app-demo
   template:
     metadata: 
       name: prostgres-pod
       labels:
         name: prostgres-pod
-        app: voting-app-pod
+        app: voting-app-demo
     spec:
       containers:
         - name: postgres

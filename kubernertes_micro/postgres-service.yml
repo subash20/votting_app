@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     name: prostgres-pod
-    app: voting-app-pod
+    app: voting-app-demo
   ports:
     - port: 5432
       targetPort: 5432
